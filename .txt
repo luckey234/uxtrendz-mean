@@ -1,0 +1,19 @@
+"Registered Succesfully 👌"
+
+
+
+
+
+export const getProfileDetails = async (req, res) => {
+    debugger
+    // const {id}=req.body
+    // const {id}=req.query
+    // consola.success(req.params.id)
+    const { id } = req.params.id
+    const user = await User.findById(req.params.id)
+    res.status(200).json({
+        messege: 'User Date fetched succesfully',
+        success: true,
+        user: user,
+    })
+}
